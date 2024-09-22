@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A lista</title>
+
+   <script>
+    let db = 0
+        function adatmegjelenit() {
+            let nev = localStorage.getItem("nev");
+            let kor = localStorage.getItem("kor");
+            let hely = localStorage.getItem("hely");
+            
+            
+            document.getElementById("neved_ki2").innerHTML= nev
+            document.getElementById("korod_ki").innerHTML = kor
+            document.getElementById("helyed_ki").innerHTML = hely
+            
+        }
+
+
+        function hozzaad() {
+            let kivansagok = document.getElementById("kivansagok").value.trim();
+            let miki_lista = document.getElementById("miki_lista");
+
+            if (db < 5) {
+
+                if (kivansagok !== "") {
+                miki_lista.innerHTML += `<li>${kivansagok}</li>`;
+                db += 1;
+
+                    let listaszamlalo = document.getElementById("lista");
+                     if (db > 0) {
+                    listaszamlalo.style.display = "block";
+                      }
+
+
+                    document.getElementById("darab").innerHTML = db;
+                    console.log("darab:", db);
+
+                    document.getElementById("kivansagok").value = "";
+                 }
+        } else {
+            alert("Maximum 5 kívánságot adhatsz hozzá!");
+            document.getElementById("kivansagok").disabled = true
+        }
+}
+    function elkuldes() {
+       let uzenet = document.getElementById("uzenet").value
+        document.getElementById("ide_ir").innerHTML = uzenet
+        
+    }
+   </script> 
+    <style>
+        body{
+            background-image: url(miki.png);
+            background-size: cover;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            margin-left: 300px;
+            padding: 20px;
+            color: white;
+        }
+
+        .kivansagok, .uzenet {
+            width: 45%;
+        }
+
+        h1, p, h4 {
+            font-style: italic;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 10px;
+            margin-top: 10px; 
+            margin-left: 10px;
+        }
+
+        li {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            font-style: italic;
+        }
+        #lista {
+            display: none;
+        }
+        input, button {
+            font-size: 16px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body onload="adatmegjelenit()">
+    <div style="text-align: center; color: white; padding: 10px;font-family: 'Times New Roman', Times, serif; font-size: 30px; font-style: italic; margin-top: 100px;"> <h1>Kedves Mikulás!</h1>
+        <p style="text-align: center; color: white;font-family: 'Times New Roman', Times, serif; font-size: 20px; font-style: italic;">Itt vannak az adataim, hogy megtalálj:</p>
+        <p style="text-align: center; color: white;font-family: 'Times New Roman', Times, serif; font-size: 15px; font-style: italic;">~<span id="neved_ki2"></span>, <span id="helyed_ki"></span>, <span id="korod_ki"></span>~</p>
+    </div>
+    <div class="container">
+        <div class="kivansagok">
+            <p style="color: white;font-family: 'Times New Roman', Times, serif; font-size: 20px; font-style: italic;">Kívánságok:</p> 
+            <input placeholder="Add meg a kívánságod..." id="kivansagok">
+            <br>
+            <button onclick="hozzaad()">Listához hozzáad</button>
+            
+            <div>
+
+            <h4 id="lista" style="color: white;font-family: 'Times New Roman', Times, serif; font-size: 20px; font-style: italic;">Eddig kértem <span id="darab"></span> dolgot:</h4>
+            <ul id="miki_lista">
+            </ul>
+            </div>
+        </div>    
+        <div class="uzenet">
+                <p style="color: white;font-family: 'Times New Roman', Times, serif; font-size: 20px; font-style: italic;">Üzenet a Mikulásnak:</p> 
+                <input placeholder="Ide írd a leveled..." id="uzenet">
+                <br>
+                <button onclick="elkuldes()">Küldés!</button>
+        
+            <div>
+                <span id="ide_ir"></span>
+            </div>
+        </div>    
+        
+            
+      
+    </div>
+    
+</body>
+</html>

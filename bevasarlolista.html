@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bevásárlólista</title>
+    <script src="myScript.js"></script>
+    <style>
+        #ujgomb {
+            display: none;
+        }
+    </style>
+    <script>
+        function kiirszoveget () {
+            let szovegElem = document.getElementById ("szoveghelye")
+
+            szovegElem.innerHTML = "Jó szer! Kicsit segített az internet, de eskü tudtam , hogy valami if-et kellene (vagy lehet) használni!!!"
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <p>Cucc:</p>
+        <input id="cucc">
+    </div>
+    <button onclick="hozzaad()">Listához hozzáad</button>
+
+    <button onclick="reset()">Reset lista</button>
+
+    <button onclick="kiirszoveget ()" id="ujgomb" >Kattints rám!</button>
+        <p id = "szoveghelye"></p>
+    
+
+
+    <h4>Meg kell venni <span id="darab"></span> terméket:</h4>
+    <ul id="bev_lista">
+        
+    </ul>
+        
+</body>
+
+</html>
