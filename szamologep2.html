@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>szamologep</title>
+    <script>
+        function osszead(){
+            let szam1 = parseInt(document.getElementById("a").value)
+            let szam2 = parseInt(document.getElementById("b").value)
+            if(!Number.isInteger(szam1)) {
+                alert("Az első szám nem szám!")
+                return
+            }
+            if(!Number.isInteger(szam2)) {
+                alert("A második szám nem szám!")
+                return
+            }
+
+            let eredmeny = (szam1) + (szam2)
+            // alert(eredmeny)
+            document.getElementById("eredmeny").innerHTML = eredmeny
+        }
+    </script>
+    <script>
+        function kivonas(){
+            let szam1 = parseInt(document.getElementById("a").value)
+            let szam2 = parseInt(document.getElementById("b").value)
+            if(!Number.isInteger(szam1)) {
+                alert("Az első szám nem szám!")
+                return
+            }
+            if(!Number.isInteger(szam2)) {
+                alert("A második szám nem szám!")
+                return
+            } 
+            let eredmeny = (szam1) - (szam2)
+            // alert(eredmeny)
+            document.getElementById("eredmeny").innerHTML = eredmeny
+        }
+    </script>
+    <script>
+        function szorzas() {
+            let szam1 = parseInt(document.getElementById("a").value)
+            let szam2 = parseInt(document.getElementById("b").value)
+            if(!Number.isInteger(szam1)) {
+                alert("Az első szám nem szám!")
+                return
+            }
+            if(!Number.isInteger(szam2)) {
+                alert("A második szám nem szám!")
+                return
+            }
+            let eredmeny = (szam1)*(szam2)
+            document.getElementById("eredmeny").innerHTML = eredmeny
+
+        }
+    </script>
+    <script>
+        function osztas() {
+            let szam1 = parseInt(document.getElementById("a").value)
+            let szam2 = parseInt(document.getElementById("b").value)
+            if(!Number.isInteger(szam1)) {
+                alert("Az első szám nem szám!")
+                return
+            }
+            if(!Number.isInteger(szam2)) {
+                alert("A második szám nem szám!")
+                return
+            }
+            let eredmeny = (szam1)/(szam2)
+            document.getElementById("eredmeny").innerHTML = eredmeny
+            
+        }
+    </script>
+</head>
+<body>
+    Szam 1:<input type="text" id="a"> Szam 2: <input type="text" id="b">
+    <button onclick="osszead()">Összeadás
+    </button>
+    <button onclick="kivonas()">Kivonás</button>
+    <button onclick="szorzas()">Szorzás
+    </button>
+    <button onclick="osztas()">Osztás</button>=<span id="eredmeny"></span> 
+
+</body>
+</html>
