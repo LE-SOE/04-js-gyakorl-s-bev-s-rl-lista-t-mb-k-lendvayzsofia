@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikulaslista</title>
+    <style >
+        body {
+            background-image: url(night.jpg);
+            background-size: cover;
+        }
+        #lista {
+            display: none;
+        }
+    </style>
+    </style>
+    <script src="miki.js"></script>
+</head>
+<body>
+    <div style="text-align: center; background-color: rgba(128, 0, 255, 0.277); color: white; padding: 10px;font-family: 'Times New Roman', Times, serif; font-size: 30px;"> <h1>Mikulás lista</h1>
+    </div>
+    <div style="
+        text-align: center; 
+        background-color: purple; 
+        color: white; 
+        margin-left: 400px; margin-right: 400px;
+        padding: 100;
+        font-family: 'Times New Roman', Times, serif;">
+    <h2>Adatok a Mikulásnak:</h2>
+</div>
+
+<div style="
+        text-align: center;
+        background-color: rgba(128, 0, 128, 0.411);
+        margin-left: 400px; margin-right: 400px;
+        ">  
+   <ul>
+        <p style="font-weight: bold; color: white;font-family:'Times New Roman', Times, serif; font-size: large;"> 
+            
+            Mi a neved?
+        </p>
+        <input type="text" id="neved">
+    <br> 
+    <p style="font-weight: bold; color: white;font-family:'Times New Roman', Times, serif; font-size: large;">
+        Hol laksz?
+    </p>
+    <input type="text" name="" id="helyed">
+    <br>
+    <p style="font-weight: bold; color: white;font-family:'Times New Roman', Times, serif; font-size: large;">
+        Hány éves vagy?
+    </p>
+    <input type="text" name="" id="korod">
+    <br>
+    <button onclick="koszones()">Küldés!</button>
+    <br>
+    <br>
+    </ul>
+</div>
+<div style="
+text-align: center;
+background-color: rgb(79, 0, 128);
+color: white;
+margin-left: 400px;
+margin-right: 400px;
+font-family: 'Times New Roman', Times, serif;
+font-size: medium;
+font-weight: lighter;
+font-style: italic;">
+<h4><span id="szoveghelye"></span> <span id="neved_ki"></span><span id="szoveghelye2"></span></h4>
+</div>
+<div style="text-align: center;">
+    <button id="lista" onclick="listara()">Lista készítése</button>
+</div>
+
+</body>
+</html>
